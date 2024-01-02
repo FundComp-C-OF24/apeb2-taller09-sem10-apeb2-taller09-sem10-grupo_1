@@ -1,0 +1,40 @@
+ESCOJA LA OPERACION A REALIZAR | 1. Suma | 2. Resta 
+1
+Ingrese el tamaño de la primera matriz en filas
+2
+Ingrese el tamaño de la primera matriz en columnas
+2
+Ingrese el tamaño de la segunda matriz en filas
+2
+Ingrese el tamaño de la segunda matriz en columnas
+2
+Matrices a Sumar
+ [3] [6]
+ [1] [0]
+Segunda matriz
+ [7] [-4]
+ [4] [-3]
+RESULTADOS
+ [10]  [2]
+ [5]  [-3]
+//RESTA
+ESCOJA LA OPERACION A REALIZAR | 1. Suma | 2. Resta 
+2
+Ingrese el tamaño de la primera matriz en filas
+2
+Ingrese el tamaño de la primera matriz en columnas
+2
+Ingrese el tamaño de la segunda matriz en filas
+2
+Ingrese el tamaño de la segunda matriz en columnas
+2
+Matrices a Restar
+Primera matriz
+ [-3] [-5]
+ [-7] [-9]
+Segunda matriz
+ [1] [-6]
+ [1] [-8]
+RESULTADOS
+ [-4]  [1]
+ [-8]  [-1]

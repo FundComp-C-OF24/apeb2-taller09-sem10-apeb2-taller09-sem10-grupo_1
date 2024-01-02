@@ -1,0 +1,80 @@
+INICIO
+    start = verdadero
+    Entero fila, colum, cont=0
+    gano = falso
+    cadena dato
+    Matriz juego[][] =  { {" [ ] ", " [ ] ", " [ ] " },
+         {" [ ] ", " [ ] ", " [ ] " },
+         {" [ ] ", " [ ] ", " [ ] "} }
+    >>"===/TRES EN RAYA/==="
+    HACER 
+        >>"    1    2    3"
+        PARA i  hasta juego longitud con paso 1 hacer
+        >> (i + 1) + " "
+        PARA j hasta juego[i] longitud con paso 1 hacer 
+            >>juego[i][j]
+        FIN PARA
+        salto
+        FIN PARA
+        HACER 
+            >>"Ingrese la fila (1-3)"
+            >>fila 
+            >>"Ingrese la columna (1-3)"
+            >>colum 
+            >>"Ingrese la X o 0"
+            >>dato a mayuscula
+            fila = fila- 1
+            colum = colum- 1
+            SI fila < 0 & fila <= 3
+                >>"Error de ingreso, vuelva a intentarlo."
+            SI NO SI colum < 0 & colum <= 3
+                >>"Error de ingreso, vuelva a intentarlo."
+            SI NO SI (juego[fila][colum] es igual a (" [X] ") || juego[fila][colum] es igual a(" [0] ")) 
+                >>"Error de ingreso, esa poscion ya esta ocupada."
+            SI NO 
+                SALIR
+            FIN SI
+        MIENTRAS (start)
+        juego[fila][colum] = " ["  dato  "] "
+        cont= cont + 1
+        PARA i  hasta juego longitud con paso 1 hacer
+            SI (juego[i][0].equals(" ["  dato  "] ") && juego[i][1].equals(" ["  dato  "] ")
+                && juego[i][2].equals(" ["  dato  "] ")) 
+                start = falso
+                gano = verdadero
+                SALIR
+            FIN SI
+        FIN PARA
+        PARA i  hasta juego longitud con paso 1 hacer
+            SI (juego[0][i].equals(" ["  dato  "] ") && juego[1][i].equals(" ["  dato  "] ")
+                && juego[2][i].equals(" ["  dato  "] ")) 
+                start = falso
+                gano = verdadero
+                SALIR
+            FIN SI
+        FIN PARA
+        PARA i  hasta juego longitud con paso 1 hacer
+            SI (juego[0][0].equals(" ["  dato  "] ") && juego[1][1].equals(" ["  dato  "] ")
+                && juego[2][2].equals(" ["  dato  "] ")) 
+                start = falso
+                gano = verdadero
+                SALIR
+            FIN SI
+        FIN PARA
+        SI (cont==9) 
+        SALIR
+        FIN SI
+    MIENTRAS (start)
+    SI (gano) 
+        >>"FELICIDADES GAN0 "  dato
+     SI NO 
+        >>"EMPATE!"
+    FIN SI
+    PARA i  hasta juego longitud con paso 1 hacer
+        >>(i + 1) + " "
+        PARA j hasta juego[i] longitud con paso 1 hacer 
+            >>juego[i][j]
+        FIN PARA
+        SALTO
+    FIN PARA
+FIN

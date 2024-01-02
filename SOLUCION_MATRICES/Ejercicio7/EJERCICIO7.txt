@@ -1,0 +1,36 @@
+Algoritmo ElementosDiagonalSecundaria
+    lon = 3
+    matrix: arreglo de arreglos de enteros
+    random = Nuevo Objeto Random
+
+    matrix = Nuevo arreglo de arreglos de enteros de tamaño [lon][lon]
+
+    Para i desde 0 hasta lon - 1 Hacer
+        Para j desde 0 hasta lon - 1 Hacer
+            matrix[i][j] = random.nextInt(19) - 9
+        Fin Para
+    Fin Para
+
+    Para i desde 0 hasta lon - 1 Hacer
+        Para j desde 0 hasta lon - 1 Hacer
+            >>("[" + matrix[i][j] + "] ")
+        Fin Para
+        Salto
+    Fin Para
+
+    >>("Elementos ubicados sobre la diagonal secundaria:")
+    Para i desde 0 hasta lon - 1 Hacer
+        Para j desde 0 hasta lon - 1 - i - 1 Hacer
+            >>(matrix[i][j] + ", ")
+        Fin Para
+    Fin Para
+    Salto
+
+    >>("Elementos ubicados bajo la diagonal secundaria:")
+    Para i desde 0 hasta lon - 1 Hacer
+        Para j desde lon - 1 - i hasta lon - 1 Hacer
+            >>(matrix[i][j] + ", ")
+        Fin Para
+    Fin Para
+
+Fin Algoritmo

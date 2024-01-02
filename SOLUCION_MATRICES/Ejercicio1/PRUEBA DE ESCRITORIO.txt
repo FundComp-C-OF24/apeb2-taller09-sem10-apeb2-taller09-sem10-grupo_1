@@ -1,0 +1,21 @@
+=======INFORME DE ESTUDIANTES DEL PARALELO C=======
+==============================
+Promedio del paralelo C: 5.09
+========================================================================
+==Listado de estudiantes con su nota por encima del promedio del curso==
+ESTUDIANTE  |    ACD      |    APE      |   AA     |   total
+Alberto     |    2.97     |     2.80    |   1.91   | 7.69
+Antonio     |    2.14     |     2.08    |   1.50   | 5.7
+==============================================================
+==Listado de estudiantes con su nota por debajo del promedio==
+ESTUDIANTE  |    ACD      |    APE      |   AA     |   total
+Andrés      |   2.3       |     0.63    |   0.32   |    3.36
+Benjamín    |   0.16      |     1.99    |   0.04   |    2.20
+========================================
+==Estudiante con la mejor calificación==
+Estudiante      |         Nota
+Nicolás         |         9.3
+===========================================
+==Estudiante con la calificación mas baja==
+Estudiante      |         Nota
+Mariano         |         2.08

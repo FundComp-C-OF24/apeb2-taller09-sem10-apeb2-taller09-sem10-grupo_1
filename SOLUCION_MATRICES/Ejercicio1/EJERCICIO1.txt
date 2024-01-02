@@ -1,0 +1,53 @@
+    INICIO
+        cadena estudiantes[] = {"Alberto", "Andrés", "Antonio", "Armando", "Arturo","Benjamín", "Bernardo", "Carlos", "César", "Cristián","Daniel", "David", "Diego", "Eduardo", "Emilio","Enrique", "Ernesto", "Esteban", "Felipe", "Fernando","Francisco", "Gabriel", "Germán", "Gilberto", "Guillermo","Hernán", "Homero", "Horacio", "Ignacio", "Isaac","Jaime", "Javier", "Jerónimo", "Jesús", "Joaquín","Jorge", "José", "Juan", "Lorenzo", "Luis", "Manuel","Marcelo", "Marco", "Mariano", "Mario", "Mauricio","Miguel", "Nicolás", "Octavio", "Óscar", "Pablo","Patricio", "Pedro", "Rafael", "Ramiro", "Ramón","Ricardo", "Roberto", "Rodrigo", "Rubén", "Salvador","Samuel", "Sancho", "Santiago", "Sergio", "Tomas","Valentín", "Vicente", "Víctor", "Víctor Hugo", "Víctor Manuel","Víctor Hugo de Andrade y Victorino"}, mejorEst = " ", peorEst = " "  
+        entero limNotas = 3  
+        decimal notasBimestre[estudiantes longitud][limNotas], promeCurso = 0, mejorCal = 0, peorCal=10, total[estudianteslongitud]      
+        Para i hasta longitud notas bimestre con paso 1 hacer
+            Para j hasta longitud notas bimestre[i] con paso 1 hacer
+                notasBimestre[i][j] = aleatorio  0-10    
+                Si   j<2   {
+                    notasBimestre[i][j] = notasBimestre[i][j] * 0.35  
+                }Si no{
+                    notasBimestre[i][j] = notasBimestre[i][j] * 0.3  
+                }
+            FIN PARA
+            total[i]= notasBimestre[i][0]   notasBimestre[i][1]   notasBimestre[i][2]  
+            promeCurso  = total[i]  
+        FIN PARA
+        promeCurso = promeCurso / estudiantes longitud  
+        >>"=======INFORME DE ESTUDIANTES DEL PARALELO C======="
+        >>"=============================="
+        >>"Promedio del paralelo C: "   promeCurso
+        >>"========================================================================"FOR
+        >>"==Listado de estudiantes con su nota por encima del promedio del curso=="
+        >>"ESTUDIANTE  |    ACD      |    APE      |   AA     |   total"
+        Para i hasta longitud notas con paso 1 hacer
+                Si   total[i] >= promeCurso   entonces
+                     >>estudiantes[i]   " | "   notasBimestre[i][0]    " | "   notasBimestre[i][1]   " | "   notasBimestre[i][2]   " | "   total[i]    
+                    Si   total[i] > mejorCal   entonces
+                        mejorEst = estudiantes[i]  
+                        mejorCal = total[i]  
+                    FIN SI
+                FIN SI
+        FIN PARA
+        >>"=============================================================="
+        >>"==Listado de estudiantes con su nota por debajo del promedio=="
+        >>"ESTUDIANTE  |    ACD      |    APE      |   AA     |   total"
+        Para i hasta longitud notas con paso 1 hacer
+            Si   total[i] < promeCurso   {
+                 >>estudiantes[i]   " | "   notasBimestre[i][0]    " | "   notasBimestre[i][1]   " | "   notasBimestre[i][2]   " | "   total[i]    
+                Si   total[i] < peorCal   {
+                    peorEst = estudiantes[i]  
+                    peorCal = total[i]  
+                }
+            }
+        PARA
+        >>"========================================"
+        >>"==Estudiante con la mejor calSiicación=="
+        >>"Estudiante      |         Nota"
+        >>mejorEst   "  "   mejorCal
+        >>"==========================================="
+        >>"==Estudiante con la calSiicación mas baja=="
+        >>"Estudiante      |         Nota"
+        >>peorEst   "  "   peorCal
+    FIN

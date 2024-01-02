@@ -1,0 +1,140 @@
+Algoritmo Operaciones SUMA Y RESTA
+    condition = Falso
+    fila, colum, fila1, colum1, factor1, factor2, resultado: arreglo de enteros
+    ran = Nuevo Objeto Random
+    sc = Nuevo Objeto Scanner
+
+    >>("ESCOJA LA OPERACION A REALIZAR | 1. Suma | 2. Resta ")
+    op = <<Entero()
+
+    Según op Hacer
+        Caso 1:
+            Hacer
+
+                >>("Ingrese el tamaño de la primera matriz en filas")
+                <<(fila)
+                >>("Ingrese el tamaño de la primera matriz en columnas")
+                <<(colum)
+                factor1 = Nuevo arreglo de enteros de tamaño [fila][colum]
+                >>("Ingrese el tamaño de la segunda matriz en filas")
+                <<(fila1)
+                >>("Ingrese el tamaño de la segunda matriz en columnas")
+                <<(colum1)
+                factor2 = Nuevo arreglo de enteros de tamaño [fila1][colum1]
+
+
+                Si (fila != colum1 O colum != fila1) Entonces
+                    >>("Las matrices no son cuadradas, vuelva a intentarlo.")
+                    condition = Verdadero
+                Sino
+                    condition = Falso
+                Fin Si
+            Mientras (condition)
+
+            resultado = Nuevo arreglo de enteros de tamaño [fila][colum1]
+
+            Para i desde 0 hasta fila - 1 Hacer
+                Para j desde 0 hasta colum - 1 Hacer
+                    factor1[i][j] = ran.nextInt(19) - 9
+                    factor2[i][j] = ran.nextInt(19) - 9
+                Fin Para
+            Fin Para
+
+            >>("Matrices a Sumar")
+            >>("Primera matriz")
+            Para i desde 0 hasta fila - 1 Hacer
+                Para j desde 0 hasta colum - 1 Hacer
+                    >>(" [" + factor1[i][j] + "]")
+                Fin Para
+                Salto
+            Fin Para
+
+            >>("Segunda matriz")
+            Para i desde 0 hasta fila1 - 1 Hacer
+                Para j desde 0 hasta colum1 - 1 Hacer
+                    >>(" [" + factor2[i][j] + "]")
+                Fin Para
+                Salto
+            Fin Para
+
+            Para i desde 0 hasta fila - 1 Hacer
+                Para j desde 0 hasta colum1 - 1 Hacer
+                    resultado[i][j] = factor1[i][j] + factor2[i][j]
+                Fin Para
+            Fin Para
+
+            >>("RESULTADOS")
+            Para i desde 0 hasta resultado.length - 1 Hacer
+                Para j desde 0 hasta resultado[i].length - 1 Hacer
+                    >>(" [" + resultado[i][j] + "] ")
+                Fin Para
+                Salto
+            Fin Para
+
+            Fin Caso
+        Caso 2:
+            Hacer
+
+                >>("Ingrese el tamaño de la primera matriz en filas")
+                <<(fila)
+                >>("Ingrese el tamaño de la primera matriz en columnas")
+                <<(colum)
+                factor1 = Nuevo arreglo de enteros de tamaño [fila][colum]
+                >>("Ingrese el tamaño de la segunda matriz en filas")
+                <<(fila1)
+                >>("Ingrese el tamaño de la segunda matriz en columnas")
+                <<(colum1)
+                factor2 = Nuevo arreglo de enteros de tamaño [fila1][colum1]
+
+                Si (fila != colum1 O colum != fila1) Entonces
+                    >>("Las matrices no son cuadradas, vuelva a intentarlo.")
+                    condition = Verdadero
+                Sino
+                    condition = Falso
+                Fin Si
+            Mientras (condition)
+
+            resultado = Nuevo arreglo de enteros de tamaño [fila][colum1]
+
+            Para i desde 0 hasta fila - 1 Hacer
+                Para j desde 0 hasta colum - 1 Hacer
+                    factor1[i][j] = ran.nextInt(19) - 9
+                    factor2[i][j] = ran.nextInt(19) - 9
+                Fin Para
+            Fin Para
+
+            >>("Matrices a Restar")
+            >>("Primera matriz")
+            Para i desde 0 hasta fila - 1 Hacer
+                Para j desde 0 hasta colum - 1 Hacer
+                    >>(" [" + factor1[i][j] + "]")
+                Fin Para
+                Salto
+            Fin Para
+
+            >>("Segunda matriz")
+            Para i desde 0 hasta fila1 - 1 Hacer
+                Para j desde 0 hasta colum1 - 1 Hacer
+                    >>(" [" + factor2[i][j] + "]")
+                Fin Para
+                Salto
+            Fin Para
+
+            Para i desde 0 hasta fila - 1 Hacer
+                Para j desde 0 hasta colum1 - 1 Hacer
+                    resultado[i][j] = factor1[i][j] - factor2[i][j]
+                Fin Para
+            Fin Para
+
+            >>("RESULTADOS")
+            Para i desde 0 hasta resultado.length - 1 Hacer
+                Para j desde 0 hasta resultado[i].length - 1 Hacer
+                    >>(" [" + resultado[i][j] + "] ")
+                Fin Para
+                Salto
+            Fin Para
+            Fin Caso
+        Sino
+            >>("Opción incorrecta")
+    Fin Según
+Fin Algoritmo

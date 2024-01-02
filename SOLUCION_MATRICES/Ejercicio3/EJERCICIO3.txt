@@ -1,0 +1,72 @@
+INICIO
+    Entero op = 0, codigo
+    carrito = nuevo array
+    Matriz aux
+    Matriz precios = nueva Matriz
+    Array nomprod[] =  "Carro de Juguete", "Muñeco de Tela", "Conjunto de Construcción", "Figuras de Acción","Rompecabezas", "Bicicleta de Juego" 
+    Matriz producto[][] =   20, 100 ,  15, 150 ,  12, 80 ,  10, 120 ,  8, 70 ,  30, 50  ,subTotal = 0, iva = 0.12, descuento = 0.2, total = 0, subIVA = 0,cantidad
+    >>"TIENDA DE JUGUETES "
+    HACER 
+        >>"===PRODUCTOS==="
+        PARA i hasta nomprod longitud con paso 1 hacer 
+            >>(i + 1) + " " + nomprod[i] + "  $" + producto[i][0] + " - " + producto[i][1]
+        FIN PARA
+        >>"Insete el codigo del producto"
+        <<codigo 
+        SI codigo > 0 & codigo <= nomprod.length
+            codigo--
+            SI producto[codigo][1] > 0
+                    >>"Cuantos " + nomprod[codigo] + " desea llevar"
+                    cantidad = sc.nextHACERuble()
+                    SI (producto[codigo][1]-cantidad)>= 0
+                    aux = nuevo array
+                    aux añadir =(producto[codigo][0])
+                    aux añadir =(cantidad)
+                    precios añadir =(aux)
+                    carrito añadir =(nomprod[codigo])
+                    producto[codigo][1] = producto[codigo][1] - cantidad
+                    subTotal = subTotal + (cantidad * producto[codigo][0])
+                SI NO  
+                    aux = nuevo array
+                    aux añadir =(producto[codigo][0])
+                    aux añadir =(producto[codigo][1])
+                    carrito añadir =(nomprod[codigo])
+                    precios añadir =(aux)
+                    subTotal = subTotal + (producto[codigo][0] * producto[codigo][1])
+                    producto[codigo][1] = 0
+                FIN SI
+            SI NO  
+                >>"NO HAY EN STOCK"
+            FIN SI
+        SI NO
+            >"Codigo incorrecto, vuelva a intentarlo"
+        FIN SI
+        >>"¿Desea ingresar mas? | 1. Si | 2. No"
+        <<op 
+    while (op != 2)
+    >>"====FACTURA===="
+    >>"Nombre\tPrecio\tUnidades"
+    PARA i hara carrito tamaño con paso 1 hacer
+        >>(i + 1) + ".-" + carritoobtener (i) + " " + preciosobtener (i)obtener (0) + " " + preciosobtener (i)obtener (1)
+    FIN PARA
+    SI subTotal>100
+        >>"SUBTOTAL: "  subTotal
+        >>"IVA: "  iva
+        subIVA = subTotal * iva + subTotal
+        >>"SUBTOTAL IVA: "  subIVA
+        descuento = descuento * subIVA
+        >>"DESCUENTO 20%: "  descuento 
+        total = subIVA - descuento
+        >>"TOTAL: "  total
+    SI NO 
+        descuento=0
+        >>"SUBTOTAL: "  subTotal
+        >>"IVA: "  iva
+        subIVA = subTotal * iva + subTotal
+        >>"SUBTOTAL IVA: "  subIVA
+        descuento = descuento * subIVA
+        >>"DESCUENTO 20%: "  descuento 
+        total = total + subIVA
+        >>"TOTAL: "  total
+    FIN SI
+FIN

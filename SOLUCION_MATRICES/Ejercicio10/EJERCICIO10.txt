@@ -1,0 +1,26 @@
+Algoritmo PatronAsteriscos
+    filas = 7
+
+    Para i desde 1 hasta filas paso 2 Hacer
+        Para j desde 1 hasta filas - i Hacer
+            Escribir(" ")
+        Fin Para
+
+        Para j desde 1 hasta i Hacer
+            Escribir("*")
+        Fin Para
+        Escribir()
+    Fin Para
+
+    Para i desde filas - 2 hasta 1 paso -2 Hacer
+        Para j desde 1 hasta i Hacer
+            Escribir(" ")
+        Fin Para
+
+        Para j desde i hasta 1 paso -1 Hacer
+            Escribir("*")
+        Fin Para
+        Escribir()
+    Fin Para
+
+Fin Algoritmo

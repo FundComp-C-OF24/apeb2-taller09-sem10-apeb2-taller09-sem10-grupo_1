@@ -1,0 +1,38 @@
+Algoritmo ElementosDiagonalPrincipal
+    ran = Nuevo Objeto Random
+    lon = 3
+    matriz: arreglo de arreglos de enteros
+
+    matriz = Nuevo arreglo de arreglos de enteros de tamaño [lon][lon]
+
+    Para i desde 0 hasta lon - 1 Hacer
+        Para j desde 0 hasta lon - 1 Hacer
+            matriz[i][j] = ran.nextInt(19) - 9
+        Fin Para
+    Fin Para
+
+    Para i desde 0 hasta lon - 1 Hacer
+        Para j desde 0 hasta lon - 1 Hacer
+            >>("[" + matriz[i][j] + "] ")
+        Fin Para
+        Salto
+    Fin Para
+
+    >>("Elementos ubicados sobre la diagonal principal:")
+
+    Para i desde 0 hasta lon - 1 Hacer
+        Para j desde i + 1 hasta lon - 1 Hacer
+            >>(matriz[i][j] + ",")
+        Fin Para
+    Fin Para
+    Salto
+
+    >>("Elementos ubicados bajo la diagonal principal:")
+
+    Para i desde 0 hasta lon - 1 Hacer
+        Para j desde 0 hasta i - 1 Hacer
+            >>(matriz[i][j] + ",")
+        Fin Para
+    Fin Para
+
+Fin Algoritmo

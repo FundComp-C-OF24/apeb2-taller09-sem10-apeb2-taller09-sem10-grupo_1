@@ -1,0 +1,74 @@
+INICIO
+    condicion = Verdadero
+    fila, colum, fila1, colum1, factor1, factor2, resultado: arreglo de enteros
+    ran = Nuevo Objeto Random
+    sc = Nuevo Objeto Scanner
+    Hacer
+        >>("Ingrese el tamaño de la primera matriz en filas")
+        <<(fila)
+        >>("Ingrese el tamaño de la primera matriz en columnas")
+        <<(colum)
+        factor1 = Nuevo arreglo de enteros de tamaño [fila][colum]
+        >>("Ingrese el tamaño de la segunda matriz en filas")
+        <<(fila1)
+        >>("Ingrese el tamaño de la segunda matriz en columnas")
+        <<(colum1)
+        factor2 = Nuevo arreglo de enteros de tamaño [fila1][colum1]
+        Si (colum != fila1) Entonces
+            >>("Las dimensiones ingresadas son incorrectas, para la multiplicación de matrices la primera debe tener el mismo número de columnas que filas de la segunda")
+        Sino
+            condicion = Falso
+        Fin Si
+    Mientras (condicion)
+
+    resultado = Nuevo arreglo de enteros de tamaño [fila][colum1]
+
+    >>("LLENADO DE PRIMERA MATRIZ CON NUMEROS ENTRE -9 Y 9")
+    Para i desde 0 hasta fila - 1 Hacer
+        Para j desde 0 hasta colum - 1 Hacer
+            factor1[i][j] = ran.nextInt(19) - 9
+        Fin Para
+    Fin Para
+
+
+    >>("LLENADO DE SEGUNDA MATRIZ CON NUMEROS ENTRE -9 Y 9")
+    Para i desde 0 hasta fila1 - 1 Hacer
+        Para j desde 0 hasta colum1 - 1 Hacer
+            factor2[i][j] = ran.nextInt(19) - 9
+        Fin Para
+    Fin Para
+
+
+    >>("Primera matriz")
+    Para i desde 0 hasta fila - 1 Hacer
+        Para j desde 0 hasta colum - 1 Hacer
+            >>(" [" + factor1[i][j] + "]")
+        Fin Para
+        Salto
+    Fin Para
+
+    >>("Segunda matriz")
+    Para i desde 0 hasta fila1 - 1 Hacer
+        Para j desde 0 hasta colum1 - 1 Hacer
+            >>(" [" + factor2[i][j] + "]")
+        Fin Para
+        Salto
+    Fin Para
+
+    Para i desde 0 hasta fila - 1 Hacer
+        Para j desde 0 hasta colum1 - 1 Hacer
+            Para k desde 0 hasta fila1 - 1 Hacer
+                resultado[i][j] += factor1[i][k] * factor2[k][j]
+            Fin Para
+        Fin Para
+    Fin Para
+
+    >>("============")
+    >>("RESULTADOS")
+    Para i desde 0 hasta fila - 1 Hacer
+        Para j desde 0 hasta colum1 - 1 Hacer
+            >>(" [" + resultado[i][j] + "] ")
+        Fin Para
+        Salto
+    Fin Para
+FIN

@@ -1,0 +1,19 @@
+Ingrese el tamaño de la primera matriz en filas
+2
+Ingrese el tamaño de la primera matriz en columnas
+2
+Ingrese el tamaño de la segunda matriz en filas
+2
+Ingrese el tamaño de la segunda matriz en columnas
+2
+LLENADO DE MATRICES CON NUMEROS ENTRE -9 Y 9
+Primera matriz
+ [-9] [5]
+ [4] [6]
+Segunda matriz
+ [0] [6]
+ [8] [-2]
+============
+RESULTADOS
+ [40]  [-64]
+ [48]  [12]

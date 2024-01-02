@@ -1,0 +1,121 @@
+    INICIO
+        nomProd = nuevo array cadena
+        producto = nuevo array de arrays real
+        carac = nuevo array real
+        entero op = 0, posicion=0, fila = 1, colum = 2
+        entero = dato;
+        condicion = falsa
+        HACER 
+            >>"Seleccione opcion | 1 Agregar | 2 Actualizar existencias | 3 Buscar producto | 4 Eliminar producto | 5 Mostrar productos | 6 Salir"
+            <<op
+            Caso (op)
+                Caso 1
+                    >>"====== Agregar ======"
+                    >>"Igrese el nombre del producto"
+                    <<cadena nombre
+                    nomProd añadir: nombre
+                    PARA i hasta fila con paso 1 hacer
+                        carac = nuevo array
+                        PARA j hasta colum con paso 1 hacer 
+                            >>"Ingrese el precio y Cantidad"
+                            << dato
+                            carac añadir: dato 
+                        FIN PARA
+                        producto añadir : carac
+                    FIN PARA
+                SALIR
+                Caso 2
+                    SI nomProd esta vacio
+                        >>"Aun no existen existencias"
+                    SI NO
+                        >>"====== Acutualizar Existencias ======"
+                        >>"//-Lista de Productos-//"
+                        PARA i hasta nomProd tamaño con paso 1 hacer
+                            >>i + 1  " Nombre "  nomProd obtener(i)  " $"  producto obtener(i) obtener(0)  " Cantidad"  producto obtener(i) obtener(1)
+                        FIN PARA
+                        HACER 
+                            >>"Seleccione La posicion del producto"
+                            <<posicion
+                            SI posicion-1 >= nomProd tamaño Entonces
+                                >>"posicion incorrecta, vuelva a introducir"
+                                condicion = verdadera
+                            SI NO
+                                >>"Ingrese el Nombre de la nueva existencia"
+                                <<nomProd poner(posicion-1)
+                                >>"Ingrese el Precio de la nueva existencia"
+                                << dato 
+                                producto obtener(posicion-1) poner(0, dato)
+                                >>"Ingrese el Cantidad de la nueva existencia"
+                                << dato 
+                                producto obtener(posicion-1) poner(1, dato)
+                                condicion = falsa
+                            FIN SI
+                        MIENTRAS condicion
+                    FIN SI
+                SALIR
+                Caso 3
+                    SI nomProd esta vacio 
+                        >>"Aun no existen existencias"
+                    SI NO
+                        >>"====== Buscar Producto ======"
+                        HACER 
+                            >>"Ingrese la posicion del producto"
+                            <<posicion = posicion
+                        SI  posicion-1 >= nomProd tamaño 
+                                >>"posicion incorrecta, vuelva a introducir"
+                                condicion = verdadera
+                            SI NO
+                                >>posicion  " Nombre "  nomProd obtener(posicion-1)  " $"  producto obtener(posicion-1) obtener(0)  " Cantidad "  producto obtener(posicion-1) obtener(1)
+                                SALIR
+                        FIN SI    
+                        MIENTRAS condicion
+                    FIN SI
+                SALIR
+                Caso 4
+                    SI nomProd esta vacio
+                        >>"Aun no existen existencias"
+                    SI NO
+                        >>"====== Eliminar Producto ======"
+                        >>"//-Lista de Productos-//"
+                        PARA i hasta nomProd tamaño con paso 1 hacer
+                            >> i + 1  " Nombre "  nomProd obtener(i)  " $"  producto obtener(i) obtener(0)  " Cantidad"  producto obtener(i) obtener(1)
+                        FIN PARA
+                        HACER 
+                            >>"Ingrese la posicion del producto a eliminar"
+                            <<posicion = posicion
+                            SI posicion-1 >= nomProd tamaño
+                                >>"posicion incorrecta, vuelva a introducir"
+                                condicion = verdadera
+                            SI NO
+                                HACER 
+                                    >>"Seguro que quieres eliminar el produto "  nomProd obtener(posicion-1)  " 1 PARA  | 2 No"
+                                    <<entero eliminar = posicion
+                                    SI eliminar == 1  
+                                        nomProd quitar(posicion-1)
+                                        producto quitar(posicion-1)
+                                        SALIR
+                                    SI NO SI eliminar==2 
+                                        >>"No se borrara el producto"
+                                        SALIR
+                                    SI NO
+                                        >>"Seleccion Incorrecta, Seleccione nuevamente"
+                                        condicion = verdadera
+                                    FIN SI
+                                MIENTRAS condicion
+                                condicion = falsa
+                            FIN SI
+                         MIENTRAS condicion
+                    FIN SI
+                SALIR
+                Caso 5
+                    SI nomProd esta vacio
+                        >>"Aun no existen existencias"
+                    SI NO
+                        >>"//-Lista de Productos-//"
+                        PARA i hasta nomProd tamaño con paso 1 hacer
+                            >>i + 1  " Nombre "  nomProd obtener(i)  " $"  producto obtener(i) obtener(0)  " Cantidad"  producto obtener(i) obtener(1)
+                        FIN PARA
+                    FIN SI
+                SALIR
+         MIENTRAS op!=6
+    FIN

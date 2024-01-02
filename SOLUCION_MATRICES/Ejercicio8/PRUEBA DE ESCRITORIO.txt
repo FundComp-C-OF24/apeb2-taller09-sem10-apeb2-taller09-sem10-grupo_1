@@ -1,0 +1,7 @@
+ [-9] [-5] [-7]
+ [2] [1] [-6]
+ [2] [0] [-9]
+Elementos ubicados sobre la diagonal principal:
+-5,-7,-6,
+Elementos ubicados bajo la diagonal principal:
+2,2,0,

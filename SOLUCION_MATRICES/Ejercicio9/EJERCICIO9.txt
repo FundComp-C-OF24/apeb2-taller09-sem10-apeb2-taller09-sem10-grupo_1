@@ -1,0 +1,11 @@
+Algoritmo TrianguloAsteriscos
+
+    filas = 4
+    Para i desde 0 hasta filas - 1 Hacer
+        Para j desde 0 hasta i Hacer
+            >>("*")
+        Fin Para
+        Salto
+    Fin Para
+
+Fin Algoritmo

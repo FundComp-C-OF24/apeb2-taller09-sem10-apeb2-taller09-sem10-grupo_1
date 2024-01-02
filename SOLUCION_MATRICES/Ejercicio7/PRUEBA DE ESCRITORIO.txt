@@ -1,0 +1,9 @@
+[5] [4] [-8] 
+[-6] [2] [-2]
+[-7] [8] [9]
+
+Elementos ubicados sobre la diagonal secundaria:
+5, 4, -6,
+
+Elementos ubicados bajo la diagonal secundaria:
+-8, 2, -2, -7, 8, 9,
